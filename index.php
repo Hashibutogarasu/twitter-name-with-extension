@@ -1,5 +1,9 @@
 <?php
 
+require_once ""; #ログインのキーのパス
+require_once "C:/htdocs/vendor/autoload.php"; #autoload.phpのパス
+require_once "C:/htdocs/vendor/abraham/twitteroauth/autoload.php"; #同ファイルにあるabraham/twitteroauth/autoload.phpのパス
+
 use Abraham\TwitterOAuth\TwitterOAuth;
 use Abraham\TwitterOAuth\TwitterOAuthException;
 
