@@ -4,4 +4,4 @@ twitterの名前にランダムで拡張子を追加できます。
 
 保存したディレクトリで
 
-composer require  Abraham\TwitterOAuth をする必要あり
+composer require  Abraham\TwitterOAuth をする必要があります
