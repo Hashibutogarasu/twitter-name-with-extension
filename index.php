@@ -1,28 +1,9 @@
 <?php
 
-#消してもいいところ:ここから
-$appname = "Twitterの名前に拡張子を追加するやつ";
-
-require_once "C:/htdocs/path/pathconfig.php";
-require_once "C:/htdocs/applist.php";
-require_once crow_config;
-require_once crow_autoload;
-require_once crow_twitteroauth;
-
-echo(crows_app_base(0,$appname));
-#消してもいいところ:ここまで
-
-
-#消しちゃあだめ:ここから
 use Abraham\TwitterOAuth\TwitterOAuth;
 use Abraham\TwitterOAuth\TwitterOAuthException;
-#消しちゃあだめ:ここまで
 
 
-login_crows_app(); #消してもいいところ
-
-
-#消しちゃあだめ:ここから
 if(!empty($_SESSION['twAccessToken'])){
 
   $objTwitterConection = new TwitterOAuth
@@ -37,37 +18,8 @@ if(!empty($_SESSION['twAccessToken'])){
   $objTwUserInfo = $objTwitterConection->get("account/verify_credentials");
 
 }
-#消しちゃあだめ:ここまで
 
-#消してもいいところ:ここから
-elseif(empty($_SESSION['twAccessToken']['screen_name'])){
-    echo(crows_app_base(1,$appname));
-
-    echo("<br><br><br>");
-    
-    echo("<h2>".$appname."を利用するには<a href='../../login/login.php'>ログイン</a>してください。<h2>");
-
-    echo("<br><br><br>");
-    echo(crows_app_base(2,$appname));
-    exit;
-}
-
-
-$screen_name = $_SESSION['twAccessToken']['screen_name'];
-
-
-
-echo(crows_app_base(1,$appname));
-#消してもいいところ:ここまで
 ?>
-
-<?php #消してもいいところ:ここから?>
-<br><br>
-<h1><?=$appname?></h1>
-<br>
-<br>
-<?php #消してもいいところ:ここまで?>
-
 
 <?php
 
@@ -95,8 +47,6 @@ foreach ($list as $value) {
 shuffle($extension_num_list);
 
 ?>
-
-<?php #消しちゃあだめ:ここから ?>
 
 <form action="./index.php?tweet=True" method="POST">
 <br>
@@ -166,8 +116,5 @@ else{
   echo("<div class='add_blank'>ログはまだ何もないようです...</div>");
 
 }
-#消しちゃあだめ:ここまで
-
-echo(crows_app_base(2,$appname)); #消してもいいところ
 
 ?>
